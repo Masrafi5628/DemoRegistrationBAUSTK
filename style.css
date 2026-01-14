@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #004225 0%, #005a32 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,79 +14,99 @@ body {
     padding: 20px;
 }
 
+/* Form Card */
 .container {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    max-width: 500px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 45px 40px;
+    max-width: 560px;
     width: 100%;
+    border: 5px solid #D4A017;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 28px;
+/* Logo */
+.logo {
+    width: 120px;
+    display: block;
+    margin: 0 auto 15px auto;
 }
 
-.subtitle {
-    color: #666;
-    margin-bottom: 30px;
+/* Text Styling */
+.title {
+    color: #004225;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    text-align: center;
     font-size: 14px;
+    color: #D4A017;
+    margin-bottom: 15px;
+    font-style: italic;
+    text-transform: uppercase;
 }
 
+.form-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #C21E2A;
+    font-weight: 600;
+}
+
+/* Form elements */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    color: #333;
-    font-weight: 500;
-    font-size: 14px;
+    margin-bottom: 6px;
+    color: #004225;
+    font-weight: 600;
 }
 
 input, textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #A3A3A3;
     border-radius: 6px;
+    background: #f8fdf9;
     font-size: 14px;
     transition: border-color 0.3s;
-    font-family: inherit;
 }
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #D4A017;
+    background: #ffffff;
 }
 
 textarea {
     resize: vertical;
-    min-height: 100px;
 }
 
+/* Submit Button */
 button {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: #C21E2A;
+    color: #ffffff;
     border: none;
     border-radius: 6px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: opacity 0.25s, box-shadow 0.25s;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
-button:active {
-    transform: translateY(0);
+    opacity: 0.95;
+    box-shadow: 0 4px 12px rgba(194,30,42,0.4);
 }
 
 button:disabled {
@@ -94,24 +114,23 @@ button:disabled {
     cursor: not-allowed;
 }
 
+/* Feedback messages */
 .message {
-    margin-top: 20px;
+    margin-top: 18px;
     padding: 12px;
     border-radius: 6px;
-    font-size: 14px;
     display: none;
+    font-size: 14px;
 }
 
 .message.success {
     background: #d4edda;
     color: #155724;
-    border: 1px solid #c3e6cb;
 }
 
 .message.error {
     background: #f8d7da;
     color: #721c24;
-    border: 1px solid #f5c6cb;
 }
 
 .message.show {
@@ -119,5 +138,5 @@ button:disabled {
 }
 
 .required {
-    color: #e74c3c;
+    color: #C21E2A;
 }
