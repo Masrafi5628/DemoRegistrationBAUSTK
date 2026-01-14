@@ -2,13 +2,23 @@ const form = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 const responseMessage = document.getElementById('responseMessage');
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwtA_eS7PbjBmIc-gKgZBq5Xe1V8sJIWXaJmnxQOhMw9UGrKJUsinZCH51nmbo_yNSA/exec';
+// Replace with your Apps Script Web App URL
+const SCRIPT_URL = 'YOUR_SCRIPT_URL_HERE';
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Validate passwords match
+    if (password !== confirmPassword) {
+        showMessage('Passwords do not match. Please try again.', 'error');
+        return;
+    }
+
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+    submitBtn.textContent = 'Registering...';
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
@@ -26,7 +36,7 @@ form.addEventListener('submit', async (e) => {
         const result = await response.json();
 
         if (result.status === 'success') {
-            showMessage('Form submitted successfully!', 'success');
+            showMessage('Registration successful!', 'success');
             form.reset();
         } else {
             showMessage('Error submitting form. Please try again.', 'error');
@@ -36,7 +46,7 @@ form.addEventListener('submit', async (e) => {
         console.error('Error:', error);
     } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit';
+        submitBtn.textContent = 'Register';
     }
 });
 
@@ -45,5 +55,5 @@ function showMessage(message, type) {
     responseMessage.className = `message ${type} show`;
     setTimeout(() => {
         responseMessage.classList.remove('show');
-    }, 5005);
+    }, 5000);
 }
