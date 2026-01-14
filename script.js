@@ -2,7 +2,7 @@ const form = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 const responseMessage = document.getElementById('responseMessage');
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrTM0OT8RRHCpHDSvzLleZcRu_u0fNBwuoEHH0w1J4UNJ8shFiBhTNoXjGp3kEvJc/exechttps://script.google.com/macros/s/AKfycbyrTM0OT8RRHCpHDSvzLleZcRu_u0fNBwuoEHH0w1J4UNJ8shFiBhTNoXjGp3kEvJc/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrTM0OT8RRHCpHDSvzLleZcRu_u0fNBwuoEHH0w1J4UNJ8shFiBhTNoXjGp3kEvJc/exec';
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
